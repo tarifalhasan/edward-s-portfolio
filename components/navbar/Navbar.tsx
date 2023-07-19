@@ -1,16 +1,20 @@
 'use client';
-import React, { useState } from 'react';
+
 import Container from '../Container';
 import Link from 'next/link';
 import Image from 'next/image';
 import { logo } from '@/assets';
 import { navLinksData } from '@/constant';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
-// components/ActiveLink.js
+// components/ActiveLink.js"
 
 import { RxCross2 } from 'react-icons/rx';
 import { usePathname } from 'next/navigation';
 
+import { useState } from 'react';
+import Menu from '../common/Menu';
+import Logo from '../common/Logo';
+// import { ChevronDownIcon } from '@heroicons/react/20/solid';
 interface ActiveNavProps {
   href: any;
   children: any;
@@ -37,12 +41,18 @@ const Navbar = () => {
   const openNavbar = () => {
     setIsOpen(!isOpen);
   };
+  const menuItems = [
+    { label: 'EN', path: '/' },
+    { label: 'SP', path: '/' },
+    { label: 'BD', path: '/' },
+    // Add more menu items here
+  ];
   return (
     <Container>
       <header className="  py-8  flex items-center justify-between">
         <div className="logo">
           <Link href={'/'}>
-            <Image src={logo} alt="logo" />
+            <Logo width={21} height={20} />
           </Link>
         </div>
         <nav>
@@ -55,6 +65,7 @@ const Navbar = () => {
                 <ActiveLink href={link.href}>{link.lebel}</ActiveLink>
               </li>
             ))}
+            <Menu menuItems={menuItems} />
           </ul>
           <div
             className={` md:hidden fixed  bg-primary-dark   mobile_navbar 2xl:px-0 px-4 pt-6 w-full h-full   ${
@@ -82,5 +93,4 @@ const Navbar = () => {
     </Container>
   );
 };
-
 export default Navbar;

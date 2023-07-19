@@ -10,20 +10,6 @@ import Image from 'next/image';
 import { dots2, dots3, topRegR } from '@/assets';
 
 const Works = () => {
-  const defaultItemsToShow = 3;
-  const itemsPerPage = 3;
-  const [visibleProjects, setVisibleProjects] = useState(defaultItemsToShow);
-
-  const handleViewAll = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setVisibleProjects(projectsData.complete.length);
-  };
-
-  const handleViewLess = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setVisibleProjects(defaultItemsToShow);
-  };
-
   return (
     <section id="works" className=" relative">
       <Container>
@@ -35,25 +21,11 @@ const Works = () => {
             <div className=" h-[1px] w-[40px] sm:w-[70px] md:w-[40%] bg-primary"></div>
           </div>
           <div>
-            {visibleProjects === projectsData.complete.length ? (
-              <Button
-                name="View less"
-                type="outline"
-                icon="~~>"
-                onClick={handleViewLess}
-              />
-            ) : (
-              <Button
-                name="View all"
-                type="outline"
-                icon="~~>"
-                onClick={handleViewAll}
-              />
-            )}
+            <Button name="View all" type="outline" icon="~~>" link="projects" />
           </div>
         </div>
         <div className="  grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projectsData.complete.slice(0, visibleProjects).map(data => (
+          {projectsData.complete.slice(0, 3).map(data => (
             <ProjectCard
               key={data.name}
               name={data.name}

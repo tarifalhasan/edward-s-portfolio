@@ -9,6 +9,8 @@ import { RxCross2 } from 'react-icons/rx';
 import Image from 'next/image';
 import { logo } from '@/assets';
 import { navLinksData } from '@/constant';
+import Menu from '../common/Menu';
+import Logo from '../common/Logo';
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,11 +18,16 @@ const MobileMenu = () => {
   const openNavbar = () => {
     setIsOpen(!isOpen);
   };
-
+  const menuItems = [
+    { label: 'EN', path: '/' },
+    { label: 'SP', path: '/' },
+    { label: 'BD', path: '/' },
+    // Add more menu items here
+  ];
   return (
     <div className="navbar  z-50 bg-primary-dark y  left-0 py-5 right-0 hidden px-4">
       <div className="flex justify-between">
-        <Image src={logo} alt="logo" />
+        <Logo width={20} height={19} />
 
         <button onClick={() => openNavbar()}>
           <RiMenu3Fill className={`text-white`} size={25} />
@@ -32,7 +39,7 @@ const MobileMenu = () => {
         }  z-50 top-0 `}
       >
         <div className=" flex  items-center justify-between">
-          <Image src={logo} alt="logo" />
+          <Logo width={20} height={19} />
           <RxCross2
             onClick={() => openNavbar()}
             className="text-white "
@@ -51,6 +58,7 @@ const MobileMenu = () => {
               </Link>
             </li>
           ))}
+          <Menu menuItems={menuItems} />
         </ul>
       </div>
     </div>

@@ -4,9 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
-
+node_modules/.pnpm
 # testing
 /coverage
+
+
+
 
 # next.js
 /.next/

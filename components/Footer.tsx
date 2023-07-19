@@ -5,6 +5,7 @@ import { logo } from '@/assets';
 import Link from 'next/link';
 import { github, linkedin, twitter } from '@/assets/icons';
 import { TfiYoutube } from 'react-icons/tfi';
+import Logo from './common/Logo';
 
 const Footer = () => {
   return (
@@ -13,7 +14,10 @@ const Footer = () => {
         <div className=" space-y-3 flex flex-col lg:flex-row items-center lg:items-center lg:justify-between">
           <div>
             <div className=" flex flex-col lg:flex-row  items-center lg:gap-3">
-              <Image src={logo} alt="logo" />
+              <div className={`flex items-center  gap-2 `}>
+                <Image src={logo} alt="edward_logo" />
+                <span className={` text-base  font-bold `}>Edward</span>
+              </div>
               <p className=" hidden lg:block">Ornelasedward@rocketmail.com</p>
             </div>
             <h6 className=" text-center lg:text-left text-base text-white ">

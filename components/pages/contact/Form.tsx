@@ -4,6 +4,7 @@ import Button from '@/components/common/Button';
 import InputTextField from '@/components/common/InputTextFiled';
 
 import React, { useState, FormEvent, ChangeEvent } from 'react';
+import { Input, Textarea } from '@material-tailwind/react';
 
 const Inquire = () => {
   const [username, setUsername] = useState('');
@@ -23,41 +24,40 @@ const Inquire = () => {
       <div className="s basis-[55%]">
         <form className=" pt-5 grid gap-3 lg:gap-6" onSubmit={handleSubmit}>
           <div className=" grid gap-3 lg:gap-6 grid-cols-2">
-            <InputTextField
+            <Input
+              className=" border  focus:ring-0   border-gray "
+              id="name"
               label="Name"
-              type="text"
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              color="teal"
             />
-            <InputTextField
+            <Input
+              className=" border  focus:ring-0   border-gray "
+              color="teal"
+              id="email"
               label="Email"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
             />
           </div>
           <div className="grid">
-            <InputTextField
+            <Input
+              className=" border  focus:ring-0   border-gray "
+              color="teal"
+              id="title"
               label="Title"
-              type="text"
-              value={title}
-              onChange={e => setTitle(e.target.value)}
             />
           </div>
           <div className="grid">
-            <InputTextField
+            <Textarea
+              color="teal"
+              className=" border  focus:ring-0   border-gray "
+              name="message"
               label="Message"
-              type="text"
-              multiline
-              rows={4}
               value={message}
-              onChange={e => setMessage(e.target.value)}
             />
           </div>
           <div className="flex justify-end">
             <button
               type="submit"
-              className="bg-transparent border border-primary text-white px-5 flex flex-wrap items-center py-1.5"
+              className="bg-transparent border  hover:bg-primary hover:text-black font-bold border-primary text-white px-5 flex flex-wrap items-center py-1.5"
             >
               Send
             </button>

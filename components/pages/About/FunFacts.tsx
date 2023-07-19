@@ -34,7 +34,7 @@ const FunFacts = () => {
             <p>
               I explored <span className=" text-white">Singapore</span>,
               <span className=" text-white">Indonesia </span> and
-              <span className=" text-white">Hong Kong</span>
+              <span className=" text-white"> Hong Kong</span>
             </p>
           </div>
         </div>

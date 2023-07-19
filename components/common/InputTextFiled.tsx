@@ -59,9 +59,9 @@ const InputTextField: React.FC<CustomTextFieldProps> = ({
   return (
     <div className="relative">
       <label
-        className={`absolute pointer-events-none left-4 top-1/2 transform -translate-y-1/2 text-gray text-sm transition-all duration-100 ${
+        className={`absolute bg-primary-dark pointer-events-none left-4 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm transition-all duration-100 ${
           isFocused || value
-            ? 'text-white -top-[1.5px] bg-primary-dark text-xs font-semibold'
+            ? ' text-gray -top-[3px] text-sm font-semibold'
             : ''
         }`}
         htmlFor={label}

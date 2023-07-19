@@ -18,16 +18,16 @@ const Button: React.FC<ButtonProps> = ({
   target,
   onClick,
 }) => {
-  const buttonClasses = `px-5 flex flex-wrap items-center py-1.5 ${
+  const buttonClasses = `px-5 font-medium flex flex-wrap items-center py-1.5 ${
     type === 'primary'
-      ? 'bg-transparent border border-primary text-white'
+      ? 'bg-transparent border border-primary text-white hover:bg-primary hover:text-black transition duration-300 ease-in-out'
       : type === 'secondary'
-      ? 'bg-transparent border border-dark text-dark'
+      ? 'bg-transparent border border-dark text-dark hover:bg-[rgba(171, 178, 191, 1)] hover:text-gray transition duration-300 ease-in-out'
       : 'bg-transparent border-none text-white px-0' // Outline style when type is not provided or 'outline'
   }`;
 
   return (
-    <Link target={target} href={link || '/'} type="button">
+    <Link target={target} href={link || '/'} passHref>
       <button onClick={onClick} className={buttonClasses}>
         {name} {icon && <span className="mr-2">{icon}</span>}
       </button>
