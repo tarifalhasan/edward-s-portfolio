@@ -17,7 +17,7 @@ const Testimonial = () => {
             <div className=" bg-primary-dark absolute top-[-10px] left-3">
               <Qoute />
             </div>
-            <div className=" bg-primary-dark absolute bottom-[-10px] right-3">
+            <div className=" bg-primary-dark absolute z-50 bottom-[-10px] right-3">
               <Qoute />
             </div>
           </div>
@@ -27,7 +27,7 @@ const Testimonial = () => {
             </h3>
           </div>
         </Container>
-        <div className=" hidden 2xl:block absolute right-0 top-4">
+        <div className="  hidden 2xl:block absolute right-0 top-4">
           <Image width={91} height={91} src={testimonialReg} alt="sds" />
         </div>
       </div>
